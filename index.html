@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Victor Anacleto - Desenvolvedor</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <header>
+        <div class="header-content"> <button class="hamburger-menu" aria-label="Abrir menu de navegação">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav id="mainNav"> <ul>
+                    <li><a href="#about">Sobre Mim</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-layout">
+        <section id="about" class="section about-section">
+            <div class="profile-intro">
+                <img src="foto_perfil.jpg" alt="Foto de Perfil de João Victor" class="profile-pic" data-fullsize="foto_perfil.jpg">
+                <h1>João Victor Anacleto do Carmo</h1>
+                <h2>Estudante de Sistemas de Informação | Desenvolvedor em Formação</h2>
+            </div>
+            <p>Olá! Meu nome é João Victor, tenho 22 anos e sou estudante do 4º semestre de Sistemas de Informação na Universidade de Franca (UNIFRAN). Sou um desenvolvedor em formação, sempre buscando expandir meus conhecimentos e habilidades na área de tecnologia.</p>
+            <p>Para explorar meu portfólio de projetos e entender mais sobre minhas competências como desenvolvedor, convido você a visitar meu GitHub.</p>
+            <p>Se deseja conhecer minha trajetória profissional completa, incluindo experiências em outras áreas e minhas conexões no mercado, acesse meu LinkedIn.</p>
+
+            <div class="social-links">
+                <a href="https://github.com/devAnacleto" target="_blank" aria-label="Perfil do GitHub">
+                    <img src="ico-github.png" alt="Ícone do GitHub" class="social-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-anacleto-602731318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="Perfil do LinkedIn">
+                    <img src="ico-linkedin.png" alt="Ícone do LinkedIn" class="social-icon">
+                </a>
+            </div>
+        </section>
+
+        <section id="skills" class="section skills-section">
+            <h2>Habilidades</h2>
+            <ul class="skill-list">
+                <li><strong>HTML:</strong> Intermediário</li>
+                <li><strong>CSS:</strong> Intermediário</li>
+                <li><strong>JavaScript:</strong> Intermediário</li>
+                <li><strong>Python:</strong> Intermediário</li>
+                <li><strong>Banco de Dados:</strong> Estudando</li>
+                <li><strong>Java:</strong> Estudando</li>
+                <li><strong>Git:</strong> Avançado</li>
+            </ul>
+            <p class="skill-note">Sempre buscando aprimorar e adquirir novas habilidades.</p>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2>Contato</h2>
+            <p>Fique à vontade para entrar em contato para oportunidades de trabalho, colaborações ou apenas para trocar uma ideia!</p>
+            <div class="contact-info">
+                <p><strong>E-mail:</strong> <a href="mailto:joao.anacleto_02@outlook.com">joao.anacleto_02@outlook.com</a></p>
+                <p><strong>WhatsApp:</strong> +55 16 99436-5007</p>
+                <button id="whatsappButton" class="whatsapp-btn">
+                    <img src="ico-whatsapp.png" alt="Ícone do WhatsApp" class="whatsapp-icon"> Fale comigo no WhatsApp
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 João Victor Anacleto do Carmo. Todos os direitos reservados.</p>
+    </footer>
+
+    <div id="imageModal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

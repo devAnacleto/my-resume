@@ -1,0 +1,483 @@
+/* Cores base para o tema escuro */
+:root {
+    --text-color: #f0f0f0;
+    --background-color: #1a1a1a;
+    --section-bg: #2a2a2a; /* Cor padrão para as seções */
+    --primary-color: #00aaff;
+    --accent-color: #bbbbbb;
+    --border-color: #444;
+    --header-bg: #0d0d0d;
+    --header-text: #fff;
+    --whatsapp-color: #25D366;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Adicionado para controlar o scroll do body quando o menu está aberto */
+body.no-scroll {
+    overflow: hidden;
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1rem 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.header-content {
+    display: flex;
+    justify-content: center; /* Centraliza a nav por padrão */
+    align-items: center;
+    position: relative; /* Para posicionar o hambúrguer e a nav */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar principal em telas grandes */
+nav {
+    display: block; /* Garante que a nav seja um bloco em telas grandes */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: var(--header-text);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Menu Hambúrguer */
+.hamburger-menu {
+    display: none; /* Escondido por padrão em telas grandes */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100; /* Acima da nav quando ela estiver em modo mobile */
+    /* Posiciona o hambúrguer no canto esquerdo do header-content */
+    position: absolute;
+    left: 20px; /* Ajusta a distância da borda esquerda */
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--header-text);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Animação do hambúrguer para fechar (X) */
+.hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+.hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Layout principal para as seções */
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+    gap: 20px;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Estilo base para todas as seções de conteúdo */
+.section {
+    background-color: var(--section-bg);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    display: none; /* ESCONDE TODAS AS SEÇÕES POR PADRÃO */
+}
+
+/* Apenas a seção ativa */
+.section.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Título das seções */
+.section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 2em;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Sobre mim - perfil */
+.profile-intro {
+    margin-bottom: 25px;
+    width: 100%;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0,255,255,0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-pic:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(0,255,255,0.6);
+}
+
+.profile-intro h1 {
+    margin: 10px 0 5px;
+    color: var(--text-color);
+    font-size: 2.2em;
+}
+
+.profile-intro h2 {
+    margin: 0 0 20px;
+    color: var(--accent-color);
+    font-size: 1.3em;
+    font-weight: normal;
+}
+
+.section p {
+    text-align: justify;
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.social-links {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 0;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: invert(1);
+}
+
+.social-icon:hover {
+    transform: scale(1.15);
+    filter: invert(0.8) sepia(1) saturate(5) hue-rotate(180deg);
+}
+
+/* Habilidades */
+.skill-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.skill-list li {
+    background-color: var(--background-color);
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--accent-color);
+    box-shadow: 0 2px 7px rgba(0,0,0,0.15);
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.skill-list li strong {
+    color: var(--primary-color);
+}
+
+.skill-note {
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 0.95em;
+    margin-top: 20px;
+    padding-top: 0;
+}
+
+/* Contato */
+.contact-info {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.contact-info p {
+    margin: 0;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: var(--accent-color);
+}
+
+.whatsapp-btn {
+    background-color: var(--whatsapp-color);
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(37,211,102,0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #1DA851;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(37,211,102,0.4);
+}
+
+.whatsapp-icon {
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    font-size: 0.9em;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+/* Modal de Imagem */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsividade - Ajustes para Mobile */
+@media (max-width: 768px) {
+    .header-content {
+        /* Permite que o hambúrguer fique à esquerda e o cabeçalho possa ter um título centralizado, se desejar */
+        justify-content: space-between; /* Espaçamento entre hambúrguer e possível título/logo */
+        padding: 0 15px;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Mostra o hambúrguer */
+        position: static; /* Remove o posicionamento absoluto dentro do header-content */
+        margin-right: auto; /* Empurra para a esquerda se houver outros elementos */
+        left: initial; /* Remove a propriedade left */
+    }
+
+    nav {
+        /* Esconde a navegação por padrão em mobile */
+        display: flex; /* Mudado de none para flex para que a transição funcione corretamente */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--header-bg);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(100%); /* Esconde fora da tela à direita */
+        transition: transform 0.4s ease-out;
+        z-index: 999; /* Fica abaixo do botão de hambúrguer */
+    }
+
+    nav.active {
+        transform: translateX(0); /* Mostra a navegação deslizando */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    nav ul li {
+        margin: 0;
+    }
+
+    nav ul li a {
+        font-size: 1.5em;
+        padding: 10px 0;
+        display: block;
+    }
+
+    /* Adicionado para o botão de fechar (X) no menu mobile */
+    nav.active .hamburger-menu {
+        position: absolute; /* Posição absoluta para o X */
+        top: 15px;
+        right: 15px;
+        left: initial; /* Remove a propriedade left */
+    }
+
+
+    .main-layout {
+        padding: 15px;
+    }
+    .section {
+        max-width: 100%;
+        padding: 25px;
+    }
+    .profile-intro h1 {
+        font-size: 2em;
+    }
+    .profile-intro h2 {
+        font-size: 1.2em;
+    }
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+    .social-icon {
+        width: 35px;
+        height: 35px;
+    }
+    .whatsapp-btn {
+        font-size: 0.9em;
+        padding: 10px 20px;
+    }
+    .section h2 {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 15px;
+    }
+    .section h2 {
+        font-size: 1.5em;
+    }
+    .skill-list li {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    .section p {
+        font-size: 0.95em;
+    }
+}
