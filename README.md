@@ -1,11 +1,5 @@
 # João Victor Anacleto do Carmo | Portfólio Pessoal
 
-![Captura de Tela do Portfólio - Desktop](https://github.com/devAnacleto/my-resume/blob/main/screenshot_desktop.png?raw=true)
-*Uma imagem de captura de tela do seu site no desktop (substitua pela URL real da sua imagem)*
-
-![Captura de Tela do Portfólio - Menu Mobile](https://github.com/devAnacleto/my-resume/blob/main/screenshot_mobile_menu.png?raw=true)
-*Uma imagem de captura de tela do seu site no mobile com o menu aberto (substitua pela URL real da sua imagem)*
-
 ---
 
 ## 🚀 Sobre Este Projeto
